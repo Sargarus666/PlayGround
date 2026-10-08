@@ -1,0 +1,2 @@
+# Compose
+-dontwarn androidx.compose.**
