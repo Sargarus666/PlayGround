@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MMO Calendar — календарь выхода MMORPG</title>
+<meta name="description" content="MMO Calendar: релизы, ЗБТ/ОБТ, новости MMORPG, рейтинг и автообновление. Бесплатно для Android.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23d9b36c'/%3E%3Ctext x='32' y='44' font-size='32' text-anchor='middle'%3E%F0%9F%8E%AE%3C/text%3E%3C/svg%3E">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0c0e13;--card:#141821;--line:rgba(255,255,255,.08);--txt:#eef0f4;--mut:#9aa1b2;--gold:#d9b36c;--gold-d:#a8823f}
+html{scroll-behavior:smooth}
+body{background:radial-gradient(1000px 500px at 50% -10%,#1c2130 0%,transparent 60%),var(--bg);color:var(--txt);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.6}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;z-index:10;backdrop-filter:blur(12px);background:rgba(12,14,19,.85);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;gap:12px;padding:14px 20px}
+.logo{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--gold),var(--gold-d));display:grid;place-items:center;font-size:19px}
+.brand{font-weight:800;font-size:16px}
+.ver{font-size:11px;color:var(--gold);border:1px solid rgba(217,179,108,.4);border-radius:99px;padding:2px 9px}
+.sp{flex:1}
+a.btn{display:inline-block;text-decoration:none;border-radius:12px;padding:12px 22px;font-weight:700;font-size:14px;transition:.15s}
+.btn.gold{background:linear-gradient(135deg,var(--gold),var(--gold-d));color:#14100a}
+.btn.gold:hover{filter:brightness(1.1)}
+.btn.ghost{border:1px solid var(--line);color:var(--txt);background:rgba(255,255,255,.04)}
+.btn.small{padding:8px 14px;font-size:13px}
+.hero{text-align:center;padding:76px 0 54px}
+.hero h1{font-size:clamp(30px,5vw,50px);font-weight:800;letter-spacing:-.5px}
+.hero h1 span{color:var(--gold)}
+.hero p{color:var(--mut);max-width:620px;margin:14px auto 26px;font-size:16px}
+.cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.note{margin-top:14px;font-size:12px;color:var(--mut)}
+.stats{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:26px}
+.chip{font-size:12px;color:var(--mut);border:1px solid var(--line);border-radius:99px;padding:6px 14px;background:rgba(255,255,255,.03)}
+.chip b{color:var(--gold)}
+section{padding:44px 0}
+h2{font-size:24px;margin-bottom:6px}
+.sub{color:var(--mut);font-size:14px;margin-bottom:22px}
+.grid{display:grid;gap:14px}
+@media(min-width:700px){.grid{grid-template-columns:1fr 1fr 1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px}
+.card .ic{font-size:24px}
+.card h3{font-size:15px;margin:8px 0 4px}
+.card p{font-size:13px;color:var(--mut)}
+.vers{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:8px 20px}
+.vrow{display:flex;align-items:center;gap:12px;padding:12px 0;border-top:1px solid var(--line);font-size:14px}
+.vrow:first-child{border:none}
+.vrow b{color:var(--gold)}
+.vrow small{color:var(--mut);display:block;font-size:12px}
+.donate{background:linear-gradient(180deg,rgba(217,179,108,.08),transparent);border:1px solid rgba(217,179,108,.25);border-radius:22px;padding:30px;text-align:center}
+.donate h2 span{color:var(--gold)}
+.donate .row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin-bottom:10px;font-size:14px}
+.faq summary{cursor:pointer;font-weight:700}
+.faq p{color:var(--mut);margin-top:8px;font-size:13px}
+footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--mut);font-size:12px;text-align:center}
+footer a{color:var(--gold)}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="logo">🎮</div><div class="brand">MMO Calendar</div><span class="ver">2.1</span>
+  <div class="sp"></div>
+  <a class="btn gold small" href="https://raw.githubusercontent.com/Sargarus666/PlayGround/opencode/37813996751/mmo-calendar/apks/mmo-calendar-2.1.apk" download>Скачать APK</a>
+</div></header>
+
+<div class="wrap">
+  <div class="hero">
+    <h1>Календарь выхода <span>MMORPG</span></h1>
+    <p>Релизы, ЗБТ и ОБТ, новости, рейтинг и крупные обновления — всё само подтягивается из сети. Для тех, кто отслеживает новинки и прибыльные MMO.</p>
+    <div class="cta">
+      <a class="btn gold" href="https://raw.githubusercontent.com/Sargarus666/PlayGround/opencode/37813996751/mmo-calendar/apks/mmo-calendar-2.1.apk" download>⬇ Скачать для Android</a>
+      <a class="btn ghost" href="#inside">Что внутри</a>
+    </div>
+    <div class="note">Версия 2.1 · бесплатно · Android 8.0+ · обновления ставятся поверх</div>
+    <div class="stats">
+      <span class="chip"><b>80+</b> событий</span>
+      <span class="chip"><b>ЗБТ / ОБТ</b> тесты</span>
+      <span class="chip"><b>50</b> новостей</span>
+      <span class="chip">рейтинг <b>1–100</b></span>
+    </div>
+  </div>
+
+  <section id="inside">
+    <h2>Что внутри</h2>
+    <div class="sub">Пять разделов, ничего лишнего</div>
+    <div class="grid">
+      <div class="card"><div class="ic">📅</div><h3>Календарь</h3><p>Релизы по месяцам с фильтрами: релизы, ранний доступ, ЗБТ/ОБТ, AAA.</p></div>
+      <div class="card"><div class="ic">☰</div><h3>Список</h3><p>Дальше по датам, недавно вышло, целевые окна. Свайп вниз обновляет.</p></div>
+      <div class="card"><div class="ic">📰</div><h3>Новости</h3><p>Лента MMORPG-новостей с датами. Открываются внутри приложения.</p></div>
+      <div class="card"><div class="ic">★</div><h3>Рейтинг 1–100</h3><p>Оценки игр и метки AAA-проектов для быстрого выбора.</p></div>
+      <div class="card"><div class="ic">🔄</div><h3>Автообновление</h3><p>Игры, тесты и новости подтягиваются из сети сами. Обновления APK — из настроек.</p></div>
+      <div class="card"><div class="ic">❤</div><h3>Избранное</h3><p>Свои игры, напоминания о релизах, онлайн-аккаунт.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Версии</h2>
+    <div class="sub">Каждая ставится поверх предыдущей</div>
+    <div class="vers">
+      <div class="vrow"><div style="flex:1"><b>2.1</b><small>Дедуп игр, проверка свежести по дате, чёрный список неммо</small></div><a class="btn gold small" href="https://raw.githubusercontent.com/Sargarus666/PlayGround/opencode/37813996751/mmo-calendar/apks/mmo-calendar-2.1.apk" download>APK</a></div>
+      <div class="vrow"><div style="flex:1"><b>2.0</b><small>Новости внутри приложения, только AAA, скриншоты из Steam</small></div><a class="btn ghost small" href="https://github.com/Sargarus666/PlayGround/tree/opencode/37813996751/mmo-calendar/apks">Файл</a></div>
+      <div class="vrow"><div style="flex:1"><b>1.9</b><small>Скачивание обновлений из приложения</small></div><a class="btn ghost small" href="https://github.com/Sargarus666/PlayGround/tree/opencode/37813996751/mmo-calendar/apks">Файл</a></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="donate">
+      <h2>Поддержать <span>проект</span></h2>
+      <p class="sub" style="margin:8px 0 0">Приложение бесплатно. Донат идёт на развитие календаря.</p>
+      <!-- TODO: вставь СВОИ ссылки вместо заглушек:
+        DonationAlerts: https://www.donationalerts.com/r/ТВОЙ_НИК
+        Boosty: https://boosty.to/ТВОЙ_НИК/donate
+        DonatePay: ссылка из личного кабинета donatepay.ru -->
+      <div class="row">
+        <a class="btn gold" href="https://www.donationalerts.com/r/USERNAME">DonationAlerts</a>
+        <a class="btn ghost" href="https://boosty.to/USERNAME/donate">Boosty</a>
+        <a class="btn ghost" href="https://donatepay.ru/">DonatePay</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq">
+    <h2>Вопросы</h2>
+    <div class="sub">Коротко о главном</div>
+    <details><summary>Откуда берутся игры и новости?</summary><p>Календарь тестов, каталог игр и рейтинг — открытые площадки (mmo13, Steam), новости — лента MMORPG. Всё обновляется само при запуске и по свайпу вниз.</p></details>
+    <details><summary>Как обновить приложение?</summary><p>Настройки → Обновление → «Скачать обновление». Подпись та же, ставится поверх, данные не теряются.</p></details>
+    <details><summary>Нужен ли интернет?</summary><p>Для обновления данных и входа — да. Сохранённые данные доступны офлайн.</p></details>
+  </section>
+</div>
+
+<footer>MMO Calendar · бесплатно для игроков · <a href="https://github.com/Sargarus666/PlayGround/tree/opencode/37813996751/mmo-calendar">исходники и версии</a></footer>
+</body>
+</html>
