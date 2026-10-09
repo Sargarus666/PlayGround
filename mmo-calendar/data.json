@@ -2,9 +2,9 @@
  "schema": 1,
  "dataVersion": 3,
  "appVersion": {
-  "code": 16,
-  "name": "0.1",
-  "apkUrl": "https://raw.githubusercontent.com/Sargarus666/PlayGround/opencode/37856103341/mmo-calendar/apks/mmo-calendar-0.1.apk"
+  "apkUrl": "https://raw.githubusercontent.com/Sargarus666/PlayGround/opencode/37856103341/mmo-calendar/apks/mmo-calendar-0.2.apk",
+  "code": 17,
+  "name": "0.2"
  },
  "events": [
   {
