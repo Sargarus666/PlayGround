@@ -8,5 +8,8 @@ local.properties
 google-services.json
 surge-credentials.txt
 logs/
-# sources stay local only
-app/
+# local build outputs (sources ARE committed since 0.2)
+build/
+.gradle/
+.kotlin/
+local.properties
