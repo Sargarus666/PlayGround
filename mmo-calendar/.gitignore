@@ -2,3 +2,11 @@ build/
 .gradle/
 .kotlin/
 local.properties
+# secrets — never commit
+*.jks
+*.keystore
+google-services.json
+surge-credentials.txt
+logs/
+# sources stay local only
+app/
