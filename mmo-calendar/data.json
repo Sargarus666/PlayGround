@@ -2,9 +2,9 @@
  "schema": 1,
  "dataVersion": 3,
  "appVersion": {
-  "apkUrl": "https://raw.githubusercontent.com/Sargarus666/PlayGround/opencode/37856103341/mmo-calendar/apks/mmo-calendar-0.3-site.apk",
-  "code": 18,
-  "name": "0.3",
+  "apkUrl": "https://raw.githubusercontent.com/Sargarus666/PlayGround/opencode/37856103341/mmo-calendar/apks/mmo-calendar-0.4-site.apk",
+  "code": 19,
+  "name": "0.4",
   "rustoreUrl": "https://apps.rustore.ru/app/com.mmocal.app"
  },
  "events": [
