@@ -21,7 +21,8 @@ Material You (динамические цвета Android 12+, на Android 13 �
 
 ## Установка
 
-Готовый APK: [`apks/vk-mini-0.1.apk`](apks/vk-mini-0.1.apk) (Android 8.0+, ~7 МБ).
+Готовый APK: [**vk-mini-0.1.apk**](https://github.com/Sargarus666/PlayGround/releases/download/vk-mini-v0.1/vk-mini-0.1.apk) (Android 8.0+, ~7 МБ).
+Остальные сборки — в [релизах](https://github.com/Sargarus666/PlayGround/releases).
 
 1. Скачай APK на телефон и разреши установку из этого источника.
 2. Открой приложение и вставь `access_token` (или нажми «Посмотреть демо»).
