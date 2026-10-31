@@ -1,0 +1,38 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.playground.vkmini.app-mergeReleaseResources-43:/values-night-v8/values-night-v8.xml",
+            "map": [
+                {
+                    "source": "/home/runner/work/PlayGround/PlayGround/vk-mini/app/src/main/res/values-night/colors.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "43",
+                        "endOffsets": "94"
+                    }
+                },
+                {
+                    "source": "/home/runner/work/PlayGround/PlayGround/vk-mini/app/src/main/res/values-night/themes.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "9",
+                        "endColumns": "12",
+                        "endOffsets": "564"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "99",
+                        "endLines": "10",
+                        "endColumns": "12",
+                        "endOffsets": "608"
+                    }
+                }
+            ]
+        }
+    ]
+}
