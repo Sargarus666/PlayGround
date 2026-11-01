@@ -72,6 +72,7 @@ class VkApi(private val token: String) {
             val text = item.str("text") ?: copy?.str("text").orEmpty()
             val image = firstPhoto(item.optJSONArray("attachments"))
                 ?: firstPhoto(copy?.optJSONArray("attachments"))
+            val likes = item.optJSONObject("likes")
 
             posts += FeedPost(
                 id = sourceId * 1_000_000_000L + item.optLong("post_id"),
@@ -80,9 +81,13 @@ class VkApi(private val token: String) {
                 date = item.optLong("date"),
                 text = text,
                 image = image,
-                likes = item.optJSONObject("likes")?.optInt("count") ?: 0,
+                likes = likes?.optInt("count") ?: 0,
                 comments = item.optJSONObject("comments")?.optInt("count") ?: 0,
                 reposts = item.optJSONObject("reposts")?.optInt("count") ?: 0,
+                ownerId = sourceId,
+                postId = item.optLong("post_id"),
+                liked = likes?.optInt("user_likes") == 1,
+                canLike = likes?.optInt("can_like", 1) != 0,
             )
         }
         posts to resp.str("next_from")
@@ -199,6 +204,20 @@ class VkApi(private val token: String) {
         withContext(Dispatchers.IO) {
             call("messages.markAsRead", mapOf("peer_id" to peerId.toString()))
         }
+    }
+
+    /** Returns the fresh like count from VK. */
+    suspend fun like(ownerId: Long, postId: Long, liked: Boolean): Int = withContext(Dispatchers.IO) {
+        val method = if (liked) "likes.add" else "likes.delete"
+        val root = call(
+            method,
+            mapOf(
+                "type" to "post",
+                "owner_id" to ownerId.toString(),
+                "item_id" to postId.toString(),
+            ),
+        )
+        root.optJSONObject("response")?.optInt("likes") ?: 0
     }
 
     suspend fun tracks(ownerId: Long): List<Track> = withContext(Dispatchers.IO) {

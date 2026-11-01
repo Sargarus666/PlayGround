@@ -19,7 +19,46 @@ class TokenStore(context: Context) {
             prefs.edit().putBoolean("demo", value).apply()
         }
 
-    fun clear() {
-        prefs.edit().clear().apply()
+    var userId: Long
+        get() = prefs.getLong("user_id", 0L)
+        set(value) {
+            prefs.edit().putLong("user_id", value).apply()
+        }
+
+    /** 0 means "does not expire" (VK tokens with the offline scope). */
+    var expiresAt: Long
+        get() = prefs.getLong("expires_at", 0L)
+        set(value) {
+            prefs.edit().putLong("expires_at", value).apply()
+        }
+
+    var clientId: String
+        get() = prefs.getString("client_id", null) ?: VkAuth.DEFAULT_CLIENT_ID
+        set(value) {
+            prefs.edit().putString("client_id", value.trim()).apply()
+        }
+
+    fun saveSession(token: String, userId: Long, expiresIn: Long) {
+        val expiresAt = if (expiresIn <= 0L) 0L else nowSeconds() + expiresIn
+        prefs.edit()
+            .putString("token", token)
+            .putLong("user_id", userId)
+            .putLong("expires_at", expiresAt)
+            .putBoolean("demo", false)
+            .apply()
     }
+
+    fun isExpired(): Boolean {
+        val expiresAt = expiresAt
+        return expiresAt > 0L && nowSeconds() >= expiresAt
+    }
+
+    fun clear() {
+        val clientId = clientId
+        prefs.edit().clear().apply()
+        // Keep the user's own client_id across logouts.
+        if (clientId != VkAuth.DEFAULT_CLIENT_ID) this.clientId = clientId
+    }
+
+    private fun nowSeconds(): Long = System.currentTimeMillis() / 1000
 }

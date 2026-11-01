@@ -3,6 +3,7 @@ package com.playground.vkmini
 import android.app.Application
 import android.media.AudioAttributes
 import android.media.MediaPlayer
+import android.webkit.CookieManager
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue

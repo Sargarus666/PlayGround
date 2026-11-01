@@ -19,6 +19,10 @@ data class FeedPost(
     val likes: Int,
     val comments: Int,
     val reposts: Int,
+    val ownerId: Long = 0L,
+    val postId: Long = 0L,
+    val liked: Boolean = false,
+    val canLike: Boolean = true,
 )
 
 data class Conversation(
